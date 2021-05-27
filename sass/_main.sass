@@ -1,0 +1,87 @@
+.main-section
+    background-color: $light-blue
+    padding: 0 $horizontal-padding 5rem
+    position: relative
+    z-index: 0
+    nav
+        @include space-between
+        padding: 2.2rem 3rem
+        .main-projects-header
+            @include section-header
+        .projects-filters
+            display: flex
+            font-size: 1.3rem
+            .filter-button
+                @include button
+                padding: 0.5rem
+                margin-right: 1rem
+                z-index: 99999
+            div
+                i
+                    padding: 0.5rem
+                    color: white
+                    border-radius: 10px
+                :first-child
+                    background-color: $main-blue
+                    border-top-right-radius: 0
+                    border-bottom-right-radius: 0
+                :last-child
+                    background-color: $grey
+                    border-top-left-radius: 0
+                    border-bottom-left-radius: 0
+    .all-projects
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        justify-content: center
+
+.filter-options-container
+    position: relative
+    .filter-options
+        border-top: 1px solid rgba(90, 84, 84, 0.2)
+        padding: 2rem $horizontal-padding
+        -webkit-box-shadow: 0px 5px 7px 0px rgba(179,179,179,0.43)
+        -moz-box-shadow: 0px 5px 7px 0px rgba(179,179,179,0.43)
+        box-shadow: 0px 5px 7px 0px rgba(179,179,179,0.43)
+        display: none
+        position: absolute
+        z-index: 2
+        background-color: white
+        width: 100%
+        >:first-child
+            @include space-between
+            div
+                @include section-header
+        .close-filters
+            padding: 0.5rem
+            font-size:1.5rem
+            @include button
+        .filter-inputs
+            @include space-between
+            margin: 2rem 0
+            font-size: 1.2rem
+            .filter-input
+                :first-child
+                    font-weight: 700
+                    margin-right: 0.75rem
+                select
+                    border: 1px solid $main-blue
+                    background-color: white
+                    padding: 0.5rem 1rem
+                    border-radius: 5px
+        .filter-buttons
+            display: flex
+            justify-content: flex-end
+            >*
+                @include button
+                padding:  1rem 2rem
+                i
+                    margin-right: 0.5em
+            >:first-child
+                background-color: white
+                color: $main-blue
+                border: 1px solid $main-blue
+                margin-right: 1rem
+                &:hover
+                    background-color: $hover-blue
+                    color: white

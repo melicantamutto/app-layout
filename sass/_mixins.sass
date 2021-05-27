@@ -1,0 +1,46 @@
+@mixin space-between
+    display: flex
+    justify-content: space-between
+    flex-direction: row
+    align-items: center
+
+@mixin button
+   background-color: $main-blue
+   border-radius: 10px
+   color: white
+   border: none
+   transition: all 0.2s ease-out
+   &:hover
+      background-color: $hover-blue
+
+@mixin icon
+   color: $main-blue
+
+@mixin icon-and-text
+   display: flex
+   align-items: center
+   :first-child
+      margin-right: 0.4em 
+      @include icon
+
+@mixin background-card-state($state)
+   background-color: $state
+   border-radius: 5px
+   width: 100%
+   display: flex
+   justify-content: center !important
+   margin-bottom: 0.5rem
+
+@mixin legible-text
+   padding: 0.3em
+   border-radius: 5px
+   background-color: rgba( 0, 0, 0, 0.5)  
+
+@mixin section-header
+   display: flex
+   align-items: center
+   > *
+      margin-right: 0.5rem
+      font-size: 1.5rem
+   span
+      color: grey

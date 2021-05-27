@@ -1,0 +1,59 @@
+.project-card
+    height: 24rem
+    width: 22rem
+    border-radius: 10px
+    background-color: white
+    margin: 1rem 2rem
+    -webkit-box-shadow: 0px 5px 7px 4px rgba(179,179,179,0.43)
+    -moz-box-shadow: 0px 5px 7px 4px rgba(179,179,179,0.43)
+    box-shadow: 0px 5px 7px 4px rgba(179,179,179,0.43)
+    transition: all 0.2s
+    &:hover
+        -webkit-box-shadow: 0px 5px 10px 6px rgba(100,179,179,0.43)
+        -moz-box-shadow: 0px 5px 10px 6px rgba(100,179,179,0.43)
+        box-shadow: 0px 5px 10px 6px rgba(100,179,179,0.43)
+    .project-main
+        padding: 1rem
+        height: 70%
+        border-radius: 10px 10px 0 0 
+        background-image: url(https://www.buildinggreen.com/sites/default/files/guidance/Foundry_exterior.jpg)
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        color: white
+        :first-child
+            @include space-between
+            .project-stats
+                display: flex
+                flex-wrap: wrap
+                width: 60%
+                .icon-and-text
+                    @include legible-text
+            >i
+                font-size: 1.5rem
+        >:last-child
+            @include legible-text     
+    .project-data  
+        padding: 1rem 1rem 1.5rem
+        >div
+            @include space-between
+        hr
+            margin: 1rem 0
+            border: 1px solid $grey   
+                            
+                
+.started
+    @include background-card-state($started)
+    color: white
+
+.not-started
+    @include background-card-state($not-started)
+    color: black
+
+.detained
+    @include background-card-state($detained)
+    color: black
+
+.finished
+    @include background-card-state($finished) 
+    color: white

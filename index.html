@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quierocasa</title>
+    <script src="https://kit.fontawesome.com/a484224e5b.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <header class="header-section">
+        <nav class="nav-bar">
+            <div>
+                <img class="company-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLV0qGPMyKBlFTQIwtVU7seZ187SY9RwS3kDOczVdaImDXb_yQAoEsHvEdYo85U_A8r18&usqp=CAU" alt="" />
+            </div>
+            <div class="nav-buttons">
+                <div>
+                    <i class="far fa-bell"></i>
+                    <div class="notification"></div>
+                </div>
+                <div>
+                    <i class="far fa-question-circle"></i>
+                </div>
+                <img class="user-photo"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmr_loysaOijuZtRiPpUwt6gqBQuFtwxPHWGRgyvXabhDcjKWvSwrEvhhQfxecx4UWjEo&usqp=CAU"
+                    alt="">
+
+            </div>
+        </nav>
+        <section class="header-projects">
+            <div class="header-projects-info">
+                <img class="header-projects-image" src="./assets/coin.svg" alt="" />
+                <div>
+                    <h1 class="header-projects-title">Quierocasa</h1>
+                    <div class="header-projects-stats">
+                        <div class="icon-and-text">
+                            <i class="fas fa-truck-pickup"></i>
+                            <span class="project">25</span>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="far fa-user-circle"></i>
+                            <span>71</span>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>891.308.499.537</span>
+                            <select name="currency" id="currency-type-input">
+                                <option value="mxn">MXN</option>
+                                <option value="usd">USD</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-projects-manager">
+                <div>
+                    <label for="search-input"></label>
+                    <input type="text" id="search-input" placeholder="Buscar">
+                    <i class="fas fa-search"></i>
+                </div>
+                <button><i class="fas fa-plus"></i>Crear proyecto</button>
+            </div>
+        </section>
+        <div class="filter-options-container">
+            <section class="filter-options" id="filter-options">
+                <div>
+                    <div>
+                        <i class="fas fa-filter"></i>
+                        <h3>Filtros y orden</h3>
+                        <span>(Iniciado, De la A a la Z)</span>
+                    </div>
+                    <i class="far fa-times-circle close-filters" id="close-filters"></i>
+                </div>
+                <div class="filter-inputs">
+                    <div class="filter-input">
+                        <label for="filter-state">Estado:</label>
+                        <select name="filter-state" id="filter-state">
+                            <option value="started">Iniciado</option>
+                            <option value="not-started">No iniciado</option>
+                            <option value="detained">Detenido</option>
+                            <option value="finished">Finalizado</option>
+                        </select>
+                    </div>
+                    <div class="filter-input">
+                        <label for="filter-order">Nombre:</label>
+                        <select name="filter-order" id="filter-order">
+                            <option value="a-z">A a la Z</option>
+                            <option value="z-a">Z a la A</option>
+        
+                        </select>
+                    </div>
+                    <div class="filter-input">
+                        <label for="filter-date">Fecha:</label>
+                        <select name="filter-date" id="filter-date">
+                            <option value="a-z">Escoge una opción</option>
+                            <option value="z-a">Z a la A</option>
+        
+                        </select>
+                    </div>
+                    <div class="filter-input">
+                        <label for="filter-size">Tamaño:</label>
+                        <select name="filter-size" id="filter-size">
+                            <option value="a-z">Escoge una opción</option>
+                            <option value="z-a">Z a la A</option>
+        
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-buttons">
+                    <button class="clean-filters"><i class="fas fa-broom"></i>Limpiar filtros</button>
+                    <button class="apply-filters"><i class="fas fa-filter"></i>Aplicar filtros</button>
+                </div>
+            </section>
+        </div>
+    </header>
+
+    <main class="main-section">
+        <nav>
+            <div class="main-projects-header">
+                <i class="fas fa-truck-pickup"></i>
+                <h3>Proyectos</h3><span>(Todos)</span>
+            </div>
+            <div class="projects-filters">
+                <i class="fas fa-filter filter-button" onclick="openFilters()"></i>
+                <div>
+                    <i class="fas fa-th-large"></i>
+                    <i class="fas fa-list"></i>
+                </div>
+            </div>
+        </nav>
+        <section class="all-projects">
+            <article class="project-card">
+                <div class="project-main">
+                    <div>
+                        <div class="project-stats">
+                            <p class="started">Iniciado</p>
+                            <div class="icon-and-text">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>03/04/21</span>
+                            </div>
+                            <div class="icon-and-text">
+                                <i class="far fa-user-circle"></i>
+                                <span>18</span>
+                            </div>
+                        </div>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div>
+                        <h3>Nombre del proyecto</h3>
+                        <p>Direcciòn del proyecto, ubicación</p>
+                    </div>
+                </div>
+                <div class="project-data">
+                    <div>
+                        <div class="icon-and-text">
+                            <i class="fas fa-dollar-sign"></i>
+                            <p>2.000.030 USD</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="fas fa-ruler-combined"></i>
+                            <p>960m2</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>81%</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>15%</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>46%</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="project-card">
+                <div class="project-main">
+                    <div>
+                        <div class="project-stats">
+                            <p class="not-started">No iniciado</p>
+                            <div class="icon-and-text">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>03/04/21</span>
+                            </div>
+                            <div class="icon-and-text">
+                                <i class="far fa-user-circle"></i>
+                                <span>18</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div>
+                        <h3>Nombre del proyecto</h3>
+                        <p>Direcciòn del proyecto, ubicación</p>
+                    </div>
+                </div>
+                <div class="project-data">
+                    <div>
+                        <div class="icon-and-text">
+                            <i class="fas fa-dollar-sign"></i>
+                            <p>2.000.030 USD</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="fas fa-ruler-combined"></i>
+                            <p>960m2</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>81%</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>15%</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>46%</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="project-card">
+                <div class="project-main">
+                    <div>
+                        <div class="project-stats">
+                            <p class="detained">Detenido</p>
+                            <div class="icon-and-text">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>03/04/21</span>
+                            </div>
+                            <div class="icon-and-text">
+                                <i class="far fa-user-circle"></i>
+                                <span>18</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div>
+                        <h3>Nombre del proyecto</h3>
+                        <p>Direcciòn del proyecto, ubicación</p>
+                    </div>
+                </div>
+                <div class="project-data">
+                    <div>
+                        <div class="icon-and-text">
+                            <i class="fas fa-dollar-sign"></i>
+                            <p>2.000.030 USD</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="fas fa-ruler-combined"></i>
+                            <p>960m2</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>81%</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>15%</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>46%</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="project-card">
+                <div class="project-main">
+                    <div>
+                        <div class="project-stats">
+                            <p class="finished">Finalizado</p>
+                            <div class="icon-and-text">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>03/04/21</span>
+                            </div>
+                            <div class="icon-and-text">
+                                <i class="far fa-user-circle"></i>
+                                <span>18</span>
+                            </div>
+                        </div>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div>
+                        <h3>Nombre del proyecto</h3>
+                        <p>Direcciòn del proyecto, ubicación</p>
+                    </div>
+                </div>
+                <div class="project-data">
+                    <div>
+                        <div class="icon-and-text">
+                            <i class="fas fa-dollar-sign"></i>
+                            <p>2.000.030 USD</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="fas fa-ruler-combined"></i>
+                            <p>960m2</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>81%</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>15%</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>46%</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="project-card">
+                <div class="project-main">
+                    <div>
+                        <div class="project-stats">
+                            <p class="started">Iniciado</p>
+                            <div class="icon-and-text">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>03/04/21</span>
+                            </div>
+                            <div class="icon-and-text">
+                                <i class="far fa-user-circle"></i>
+                                <span>18</span>
+                            </div>
+                        </div>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div>
+                        <h3>Nombre del proyecto</h3>
+                        <p>Direcciòn del proyecto, ubicación</p>
+                    </div>
+                </div>
+                <div class="project-data">
+                    <div>
+                        <div class="icon-and-text">
+                            <i class="fas fa-dollar-sign"></i>
+                            <p>2.000.030 USD</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="fas fa-ruler-combined"></i>
+                            <p>960m2</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>81%</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>15%</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>46%</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="project-card">
+                <div class="project-main">
+                    <div>
+                        <div class="project-stats">
+                            <p class="started">Iniciado</p>
+                            <div class="icon-and-text">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>03/04/21</span>
+                            </div>
+                            <div class="icon-and-text">
+                                <i class="far fa-user-circle"></i>
+                                <span>18</span>
+                            </div>
+                        </div>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div>
+                        <h3>Nombre del proyecto</h3>
+                        <p>Direcciòn del proyecto, ubicación</p>
+                    </div>
+                </div>
+                <div class="project-data">
+                    <div>
+                        <div class="icon-and-text">
+                            <i class="fas fa-dollar-sign"></i>
+                            <p>2.000.030 USD</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="fas fa-ruler-combined"></i>
+                            <p>960m2</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>81%</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>15%</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>46%</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="project-card">
+                <div class="project-main">
+                    <div>
+                        <div class="project-stats">
+                            <p class="started">Iniciado</p>
+                            <div class="icon-and-text">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>03/04/21</span>
+                            </div>
+                            <div class="icon-and-text">
+                                <i class="far fa-user-circle"></i>
+                                <span>18</span>
+                            </div>
+                        </div>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div>
+                        <h3>Nombre del proyecto</h3>
+                        <p>Direcciòn del proyecto, ubicación</p>
+                    </div>
+                </div>
+                <div class="project-data">
+                    <div>
+                        <div class="icon-and-text">
+                            <i class="fas fa-dollar-sign"></i>
+                            <p>2.000.030 USD</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="fas fa-ruler-combined"></i>
+                            <p>960m2</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>81%</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>15%</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>46%</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="project-card">
+                <div class="project-main">
+                    <div>
+                        <div class="project-stats">
+                            <p class="not-started">No iniciado</p>
+                            <div class="icon-and-text">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>03/04/21</span>
+                            </div>
+                            <div class="icon-and-text">
+                                <i class="far fa-user-circle"></i>
+                                <span>18</span>
+                            </div>
+                        </div>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div>
+                        <h3>Nombre del proyecto</h3>
+                        <p>Direcciòn del proyecto, ubicación</p>
+                    </div>
+                </div>
+                <div class="project-data">
+                    <div>
+                        <div class="icon-and-text">
+                            <i class="fas fa-dollar-sign"></i>
+                            <p>2.000.030 USD</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="fas fa-ruler-combined"></i>
+                            <p>960m2</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>81%</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>15%</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>46%</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="project-card">
+                <div class="project-main">
+                    <div>
+                        <div class="project-stats">
+                            <p class="not-started">No iniciado</p>
+                            <div class="icon-and-text">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>03/04/21</span>
+                            </div>
+                            <div class="icon-and-text">
+                                <i class="far fa-user-circle"></i>
+                                <span>18</span>
+                            </div>
+                        </div>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div>
+                        <h3>Nombre del proyecto</h3>
+                        <p>Direcciòn del proyecto, ubicación</p>
+                    </div>
+                </div>
+                <div class="project-data">
+                    <div>
+                        <div class="icon-and-text">
+                            <i class="fas fa-dollar-sign"></i>
+                            <p>2.000.030 USD</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="fas fa-ruler-combined"></i>
+                            <p>960m2</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>81%</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>15%</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>46%</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="project-card">
+                <div class="project-main">
+                    <div>
+                        <div class="project-stats">
+                            <p class="detained">Detenido</p>
+                            <div class="icon-and-text">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>03/04/21</span>
+                            </div>
+                            <div class="icon-and-text">
+                                <i class="far fa-user-circle"></i>
+                                <span>18</span>
+                            </div>
+                        </div>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div>
+                        <h3>Nombre del proyecto</h3>
+                        <p>Direcciòn del proyecto, ubicación</p>
+                    </div>
+                </div>
+                <div class="project-data">
+                    <div>
+                        <div class="icon-and-text">
+                            <i class="fas fa-dollar-sign"></i>
+                            <p>2.000.030 USD</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="fas fa-ruler-combined"></i>
+                            <p>960m2</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>81%</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>15%</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>46%</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="project-card">
+                <div class="project-main">
+                    <div>
+                        <div class="project-stats">
+                            <p class="finished">Finalizado</p>
+                            <div class="icon-and-text">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>03/04/21</span>
+                            </div>
+                            <div class="icon-and-text">
+                                <i class="far fa-user-circle"></i>
+                                <span>18</span>
+                            </div>
+                        </div>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div>
+                        <h3>Nombre del proyecto</h3>
+                        <p>Direcciòn del proyecto, ubicación</p>
+                    </div>
+                </div>
+                <div class="project-data">
+                    <div>
+                        <div class="icon-and-text">
+                            <i class="fas fa-dollar-sign"></i>
+                            <p>2.000.030 USD</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="fas fa-ruler-combined"></i>
+                            <p>960m2</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>81%</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>15%</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>46%</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="project-card">
+                <div class="project-main">
+                    <div>
+                        <div class="project-stats">
+                            <p class="finished">Finalizado</p>
+                            <div class="icon-and-text">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>03/04/21</span>
+                            </div>
+                            <div class="icon-and-text">
+                                <i class="far fa-user-circle"></i>
+                                <span>18</span>
+                            </div>
+                        </div>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div>
+                        <h3>Nombre del proyecto</h3>
+                        <p>Direcciòn del proyecto, ubicación</p>
+                    </div>
+                </div>
+                <div class="project-data">
+                    <div>
+                        <div class="icon-and-text">
+                            <i class="fas fa-dollar-sign"></i>
+                            <p>2.000.030 USD</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="fas fa-ruler-combined"></i>
+                            <p>960m2</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>81%</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>15%</p>
+                        </div>
+                        <div class="icon-and-text">
+                            <i class="far fa-check-circle"></i>
+                            <p>46%</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <i class="far fa-comments chat-button"></i>
+    </main>
+
+    <footer></footer>
+
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
